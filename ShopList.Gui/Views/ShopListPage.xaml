@@ -20,7 +20,7 @@
                 Text="+"
                 FontSize="Medium"
                 BackgroundColor="Green"
-            />
+                Command="{Binding Path=AddItemCommand}"/>
             <Button
                 Grid.Column="2"
                 Text="X"

@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using ShopList.Gui.Models;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ShopList.Gui.ViewModels
 {
-    public class ShopListViewModel : ObservableObject
+    public partial class ShopListViewModel : ObservableObject
     {
         public ObservableCollection<ShopListItem> Items { get; }
 
@@ -43,6 +44,12 @@ namespace ShopList.Gui.ViewModels
                 Cantidad = 1,
                 Comprado = false,
             });
+        }
+
+        [RelayCommand]
+        public async void AddItem()
+        {
+            await Shell.Current.GoToAsync("itemdetails");
         }
     }
 }
